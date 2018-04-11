@@ -27,5 +27,4 @@ public class BookController {
     public Book byTitle(@PathVariable String title) {
         return this.repository.findByTitleIgnoringCase(title);
     }
-
 }
