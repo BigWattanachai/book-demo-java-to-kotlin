@@ -1,12 +1,11 @@
 package com.example.demo
 
 
-import org.springframework.data.repository.Repository
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository
+import reactor.core.publisher.Mono
 
-interface BookRepository : Repository<Book, String> {
+interface BookRepository : ReactiveMongoRepository<Book, String> {
 
-    fun findAll(): List<Book>
-
-    fun findByTitleIgnoringCase(title: String): Book
+    fun findByTitleIgnoringCase(title: String): Mono<Book>
 
 }
